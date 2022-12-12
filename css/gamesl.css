@@ -1,0 +1,31 @@
+/* Font and Wallpaper */
+@font-face {
+    font-family: "Minecraft";
+    src: url("../fonts/Minecraft.ttf");
+}
+
+body {
+    background-image: url(../img/charselect.avif);
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Box players */
+
+.box-players {
+    padding-top: 100px;
+}
+
+.menu-button {
+    font-size: 30px;
+    font-family: "Minecraft";
+    text-align: center;
+    width: 300px;
+    height: 80px;
+    margin: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}

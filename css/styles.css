@@ -1,0 +1,85 @@
+/* Wallpaper and more */
+@font-face {
+    font-family: "Minecraft";
+    src: url("../fonts/Minecraft.ttf");
+}
+body {
+    background-image: url(../img/wallpaper.gif);
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Container and Box */
+
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    font-family: "Minecraft";
+    font-size: 50px;
+}
+
+/* Turnos */
+
+#turns {
+    padding-top: 40px;
+    color: white;
+    text-align: center;
+    font-family: "Minecraft";
+    font-size: 30px;
+    visibility: visible;
+}
+
+/* Win img */
+
+#winimg {
+    /* position: absolute;
+    margin-top: -80px;
+    width: 100%;
+    margin-left: -70px; */
+    color: white;
+    text-align: center;
+    visibility: hidden;
+    font-family: "Minecraft";
+    font-size: 30px;
+}
+
+/* CPU Button */
+
+.auto-player {
+    font-size: 20px;
+    font-family: "Minecraft";
+    text-align: center;
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Restart button */
+
+#restart {
+    font-size: 30px;
+    font-family: "Minecraft";
+    text-align: center;
+    width: 300px;
+    height: 50px;
+    margin: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}

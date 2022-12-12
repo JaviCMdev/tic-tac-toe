@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/ind.css" type="text/css">
+    <link rel="stylesheet" href="../css/gamesl.css" type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Player select</title>
 </head>
+
 <body>
-    <header>
-        <h1>Tic tac toe</h1>
-    </header>
     <div class="box-players">
-        <button id="start" class="menu-button" onclick="location.href='./pages/gamesl.html'">START GAME</button>
+        <button id="mp" class="menu-button" onclick="location.href='ingame.html'">2 PLAYER GAME</button>
+        <button id="sp" class="menu-button" onclick="cpu()">1 PLAYER GAME</button>
     </div>
-    
+
+    <script src="../js/main.js"></script>
 </body>
+
 </html>

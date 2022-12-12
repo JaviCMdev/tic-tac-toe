@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <title>Tic tac toe</title>
+</head>
+
+<body>
+    
+    <div id="turns">Es tu turno X</div>
+    <!--<img src="./img/win.png" id="winimg" alt="winimg">-->
+    <div id="winimg">X gana</div>
+
+    <button class="auto-player" type="button" name="button" onclick="rplay()">CPU</button>
+
+    <div class="container-fluid" id="mainBox">
+        <div class="row">
+            <div class="col">
+                <div class="box" id="0" onclick="playerturn(this.id)"></div>
+                <div class="box" id="1" onclick="playerturn(this.id)"></div>
+                <div class="box" id="2" onclick="playerturn(this.id)"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="box" id="3" onclick="playerturn(this.id)"></div>
+                <div class="box" id="4" onclick="playerturn(this.id)"></div>
+                <div class="box" id="5" onclick="playerturn(this.id)"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="box" id="6" onclick="playerturn(this.id)"></div>
+                <div class="box" id="7" onclick="playerturn(this.id)"></div>
+                <div class="box" id="8" onclick="playerturn(this.id)"></div>
+            </div>
+        </div>
+        <div class="results"></div>
+    </div>
+    <button id="restart" onclick="reset()">Restart</button>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
