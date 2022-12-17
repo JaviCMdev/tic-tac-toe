@@ -11,14 +11,15 @@
         crossorigin="anonymous"></script>
     <title>Player select</title>
 </head>
-
 <body>
     <div class="box-players">
-        <button id="mp" class="menu-button" onclick="location.href='ingame.html'">2 PLAYER GAME</button>
-        <button id="sp" class="menu-button" onclick="cpu()">1 PLAYER GAME</button>
+        <button id="mp" class="menu-button" onclick="login()">2 PLAYER GAME</button>
+        <button id="sp" class="menu-button" onclick="logincpu()">1 PLAYER GAME</button>
     </div>
-
+    <div class="players-name">
+        <input type="text" name="player1" id="player1" placeholder="Guile">
+        <input type="text" name="player2" id="player2" placeholder="Balrog">
+    </div>
     <script src="../js/main.js"></script>
 </body>
-
 </html>

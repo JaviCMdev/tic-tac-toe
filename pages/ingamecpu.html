@@ -11,7 +11,8 @@
         crossorigin="anonymous"></script>
     <title>Tic tac toe</title>
 </head>
-<body>
+
+<body onload="cpuon()">
     <div id="turns">Empieza X</div>
     <div id="winimg">X gana</div>
         <div id="p1">
@@ -19,7 +20,7 @@
             <div id="namep1"><script>document.write(localStorage.getItem("player1"));</script></div>
         </div>
         <div id="p2">
-            <div>P2</div>
+            <div>CPU</div>
             <div id="namep2"><script>document.write(localStorage.getItem("player2"));</script></div>
         </div>
     <div class="container-fluid" id="mainBox">
@@ -46,7 +47,7 @@
         </div>
         <div class="results"></div>
     </div>
-    <button id="restart" onclick="reset()">Restart</button>
+    <button id="restart" onclick="resetcpu()">Restart</button>
     <script src="../js/main.js"></script>
 </body>
 

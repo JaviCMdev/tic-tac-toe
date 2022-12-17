@@ -1,44 +1,58 @@
-/* Players and wincombo */
+/* Default info */
 
 let player1 = "X";
 let player2 = "O";
 let players = ["", "", "", "", "", "", "", "", ""];
 let player_turn = 0;
 let turnText = document.getElementById("turns")
-let rcounter = false;
+let cpumode = false;
 let winner = "";
 let box_number;
-let flag = 0;
+let turnstop = 0;
 let selected_box;
-let winner_combo = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-];
 
-/* Play/Reset */
+/* Save names */
 
-const cpu = () => {
-    rplay()
-    window.open("../index.html");
+const login = () => {
+    let name1 = document.getElementById("player1").value;
+    let name2 = document.getElementById("player2").value;
     
+    localStorage.setItem("player1", name1);
+    localStorage.setItem("player2", name2);
+
+    document.getElementById("player1").value = "";
+    document.getElementById("player2").value = "";
+
+    window.location.href = "../pages/ingame.html"
+
 }
 
-const rplay = () => {
+const logincpu = () => {
+    let name1 = document.getElementById("player1").value;
+    let name2 = document.getElementById("player2").value;
+    
+    localStorage.setItem("player1", name1);
+    localStorage.setItem("player2", name2);
+
+    document.getElementById("player1").value = "";
+    document.getElementById("player2").value = "";
+
+    window.location.href = "../pages/ingamecpu.html"
+
+}
+
+/* Activar CPU */
+
+const cpuon = () => {
     reset();
-    rcounter = true;
+    cpumode = true;
 }
 
-/* CPU */
+/* CPU random draw */
 
-const rcountf = () => {
+const cputurn = () => {
     check_draw();
-    if (flag == 0) {
+    if (turnstop == 0) {
         box_number = Math.floor(Math.random() * 8);
         for (var i = 0; i < 9; i++) {
             if (players[i] == player2 && players[i + 1] == player2) { box_number = i + 2; }
@@ -53,7 +67,7 @@ const rcountf = () => {
             turns.innerHTML = `¡Es tu turno, ${player1}!`;
         }
         else {
-            rcountf();
+            cputurn();
         }
 
     }
@@ -63,15 +77,15 @@ const rcountf = () => {
 /* Player Turns */
 
 const playerturn = (id) => {
-    if (flag == 0) {
+    if (turnstop == 0) {
         box_number = id;
         if (player_turn % 2 == 0) {
             if (players[id] == "") {
                 draw(box_number, player1);
                 turns.innerHTML = `¡Es tu turno, ${player2}!`;
-                if (rcounter == true) {
+                if (cpumode == true) {
                     player_turn++;
-                    rcountf();
+                    cputurn();
                 }
             }
             else {
@@ -93,12 +107,12 @@ const playerturn = (id) => {
         player_turn++;
     }
     else {
-        alert("Game Over," + winner + " ha ganado!");
+        alert("Game Over, " + winner + " ha ganado!");
     }
     check_draw();
 }
 
-/* Check win/lose/draw */
+/* Draw box */
 
 const draw = (box_number, player) => {
     selected_box = document.getElementById(box_number);
@@ -107,6 +121,8 @@ const draw = (box_number, player) => {
     check_winner();
     check_draw();
 }
+
+/* Check winner */
 
 const check_winner = () => {
     if (players[0] == player1 && players[1] == player1 && players[2] == player1 ||
@@ -120,7 +136,7 @@ const check_winner = () => {
         document.getElementById("winimg").style.visibility = "visible";
         document.getElementById("turns").style.visibility = "hidden";
         winner = player1;
-        flag = 1;
+        turnstop = 1;
     }
     else if (players[0] == player2 && players[1] == player2 && players[2] == player2 ||
         players[3] == player2 && players[4] == player2 && players[5] == player2 ||
@@ -134,9 +150,10 @@ const check_winner = () => {
         document.getElementById("winimg").style.visibility = "visible";
         document.getElementById("turns").style.visibility = "hidden";
         winner = player2;
-        flag = 1;
+        turnstop = 1;
     }
 }
+
 const check_draw = () => {
     if (player_turn >= 9 && winner == "") {
         document.getElementById("winimg").innerHTML = " Empate";
@@ -153,10 +170,23 @@ const reset = () => {
         selected_box = document.getElementById(i);
         selected_box.innerHTML = "";
     }
-    flag = 0; rcounter = false;
+    turnstop = 0; cpumode = false;
     player_turn = 0;
     document.getElementById("winimg").innerHTML = "X gana";
-
     document.getElementById("winimg").style.visibility = "hidden";
     document.getElementById("turns").style.visibility = "visible";
+}
+
+const resetcpu = () => {
+    players = ["", "", "", "", "", "", "", "", ""];
+    for (var i = 0; i < 9; i++) {
+        selected_box = document.getElementById(i);
+        selected_box.innerHTML = "";
+    }
+    turnstop = 0; cpumode = false;
+    player_turn = 0;
+    document.getElementById("winimg").innerHTML = "X gana";
+    document.getElementById("winimg").style.visibility = "hidden";
+    document.getElementById("turns").style.visibility = "visible";
+    cpuon()
 }

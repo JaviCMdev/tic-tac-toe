@@ -1,4 +1,5 @@
 /* Font and Wallpaper */
+
 @font-face {
     font-family: "Minecraft";
     src: url("../fonts/Minecraft.ttf");
@@ -20,12 +21,52 @@ body {
 }
 
 .menu-button {
-    font-size: 30px;
+    background-color: transparent;
+    border-color: transparent;
+    color: white;
+    text-shadow: 3px 3px 2px black;
+    font-size: 40px;
     font-family: "Minecraft";
     text-align: center;
-    width: 300px;
+    width: 400px;
     height: 80px;
     margin: 10px;
     margin-left: 50%;
     transform: translateX(-50%);
+    animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Players name */
+
+.players-name {
+    padding-top: 55px;
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#player1 {
+    color: white;
+    background-color: rgb(60, 40, 190);
+    margin-left: 25px;
+    font-size: 25px;
+    font-family: "Minecraft";
+    text-align: center;
+    height: 40px;
+}
+
+#player2 {
+    color: white;
+    background-color: rgb(60, 40, 190);
+    margin-right: 25px;
+    font-size: 25px;
+    font-family: "Minecraft";
+    text-align: center;
+    height: 40px;
 }

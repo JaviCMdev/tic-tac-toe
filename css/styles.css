@@ -1,4 +1,5 @@
 /* Wallpaper and more */
+
 @font-face {
     font-family: "Minecraft";
     src: url("../fonts/Minecraft.ttf");
@@ -15,13 +16,14 @@ body {
 /* Container and Box */
 
 .container-fluid {
+    z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .box {
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     border: 2px solid black;
     width: 100px;
     height: 100px;
@@ -33,42 +35,25 @@ body {
     font-size: 50px;
 }
 
-/* Turnos */
+/* Turns */
 
 #turns {
     padding-top: 40px;
-    color: white;
+    color: orange;
     text-align: center;
     font-family: "Minecraft";
-    font-size: 30px;
+    font-size: 50px;
     visibility: visible;
 }
 
 /* Win img */
 
 #winimg {
-    /* position: absolute;
-    margin-top: -80px;
-    width: 100%;
-    margin-left: -70px; */
-    color: white;
+    color: orange;
     text-align: center;
     visibility: hidden;
     font-family: "Minecraft";
     font-size: 30px;
-}
-
-/* CPU Button */
-
-.auto-player {
-    font-size: 20px;
-    font-family: "Minecraft";
-    text-align: center;
-    width: 100px;
-    height: 40px;
-    margin: 10px;
-    margin-left: 50%;
-    transform: translateX(-50%);
 }
 
 /* Restart button */
@@ -82,4 +67,27 @@ body {
     margin: 10px;
     margin-left: 50%;
     transform: translateX(-50%);
+}
+
+/* Players tag */
+
+#p1 {
+    position: absolute;
+    left: 0%;
+    color: white;
+    margin-left: 20%;
+    font-size: 25px;
+    font-family: "Minecraft";
+    text-align: center;
+    height: 40px;
+}
+#p2 {
+    position: absolute;
+    right: 0%;
+    color: white;
+    margin-right: 20%;
+    font-size: 25px;
+    font-family: "Minecraft";
+    text-align: center;
+    height: 40px;
 }
