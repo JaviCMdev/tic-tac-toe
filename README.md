@@ -1,4 +1,4 @@
-# Tic Tac Toe 8bits Edition"
+# Tic Tac Toe "8bits Edition"
 **Proyecto**
 - En este proyecto vamos a usar funciones de JavaScript para recrear un 3 en raya que lo dividiremos en las siguientes vistas:
     - Pagina inicio. Menu principal para iniciar el juego.
@@ -20,3 +20,5 @@
 
 **Agradecimientos**
 - Dar las gracias al equipo de <a href="https://geekshubsacademy.com/">GeeksHubs Academy</a> por los conocimientos adquiridos.
+
+**Code by Javier Capilla Martin**
